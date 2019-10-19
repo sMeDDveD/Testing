@@ -1,0 +1,5 @@
+3,4,5:12,6.0,versatile
+2,2,2:6,1.732,EQUILATERAL
+3,3,4:10,4.472,isosceles
+3,4,3:10,4.472,isosceles
+4,3,3:10,4.472,isosceles

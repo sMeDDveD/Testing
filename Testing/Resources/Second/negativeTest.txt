@@ -1,0 +1,12 @@
+3 1 2:4:The array was not sorted
+1 aa 5 6:4:Wrong array format
+6,7,8:4:Wrong array format
+:4:The array was null
+   :7:Size of the array should be non-zero
+1 2 2147483648:7:Wrong array format
+1 2 6:2147483648:Wrong key format
+1.4 2 5:3:Wrong array format
+1 2 5:3.7:Wrong key format
+1 1 2::Key was null
+1 1 2:5 5:Wrong key format
+1 1 2:aaa:Wrong key format

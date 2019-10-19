@@ -1,0 +1,140 @@
+-------------Positive tests-------------
+Test #1 OK
+Description: 
+	array: [1, 2, 3, 4, 5, 6, 7] 
+	key: 1
+	result: true 1
+
+Test #2 OK
+Description: 
+	array: [1, 2, 3, 4, 5, 6, 7] 
+	key: 7
+	result: true 7
+
+Test #3 OK
+Description: 
+	array: [1, 2, 3, 4, 5, 6, 7] 
+	key: 4
+	result: true 4
+
+Test #4 OK
+Description: 
+	array: [1, 2, 3, 4, 5, 6, 7] 
+	key: 8
+	result: false 0
+
+Test #5 OK
+Description: 
+	array: [1, 2, 3, 4, 5, 6, 7] 
+	key: 0
+	result: false 0
+
+Test #6 OK
+Description: 
+	array: [1, 1, 1] 
+	key: 1
+	result: true 2
+
+Test #7 OK
+Description: 
+	array: [1, 1, 1, 4, 4, 5, 6] 
+	key: 1
+	result: true 2
+
+Test #8 OK
+Description: 
+	array: [1, 2, 3, 3, 3, 5, 6] 
+	key: 3
+	result: true 4
+
+Test #9 OK
+Description: 
+	array: [1, 2, 3, 5, 6, 6, 6] 
+	key: 6
+	result: true 6
+
+Test #10 OK
+Description: 
+	array: [-1, 1, 2, 3, 5, 6] 
+	key: 4
+	result: false 0
+
+Test #11 OK
+Description: 
+	array: [0] 
+	key: 0
+	result: true 1
+
+Test #12 OK
+Description: 
+	array: [0] 
+	key: 1
+	result: false 0
+
+Test #13 OK
+Description: 
+	array: [0] 
+	key: -1
+	result: false 0
+
+Test #14 OK
+Description: 
+	array: [1, 2, 5, 5, 5, 5] 
+	key: 5
+	result: true 3
+
+Test #15 OK
+Description: 
+	array: [1, 1, 1, 1, 1, 2] 
+	key: 1
+	result: true 3
+
+-------------Negative tests-------------
+Test #1 OK
+Description: 
+	The array was not sorted 
+
+Test #2 OK
+Description: 
+	Wrong array format 
+
+Test #3 OK
+Description: 
+	Wrong array format 
+
+Test #4 OK
+Description: 
+	The array was null 
+
+Test #5 OK
+Description: 
+	Size of the array should be non-zero 
+
+Test #6 OK
+Description: 
+	Wrong array format 
+
+Test #7 OK
+Description: 
+	Wrong key format 
+
+Test #8 OK
+Description: 
+	Wrong array format 
+
+Test #9 OK
+Description: 
+	Wrong key format 
+
+Test #10 OK
+Description: 
+	Key was null 
+
+Test #11 OK
+Description: 
+	Wrong key format 
+
+Test #12 OK
+Description: 
+	Wrong key format 
+

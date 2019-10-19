@@ -1,0 +1,90 @@
+------------- Positive tests ------------ 
+Test #1 OK 
+Description:
+a = 3, b = 4, c = 5 
+P, S, Type = 12,6.0,VERSATILE
+
+Test #2 OK 
+Description:
+a = 2, b = 2, c = 2 
+P, S, Type = 6,1.7320508075688772,EQUILATERAL
+
+Test #3 OK 
+Description:
+a = 3, b = 3, c = 4 
+P, S, Type = 10,4.47213595499958,ISOSCELES
+
+Test #4 OK 
+Description:
+a = 3, b = 4, c = 3 
+P, S, Type = 10,4.47213595499958,ISOSCELES
+
+Test #5 OK 
+Description:
+a = 4, b = 3, c = 3 
+P, S, Type = 10,4.47213595499958,ISOSCELES
+
+------------- Negative tests ------------- 
+Test #1 OK 
+Sides must be positive!
+
+Test #2 OK 
+Sides must be positive!
+
+Test #3 OK 
+Sides must be positive!
+
+Test #4 OK 
+Sides must be positive!
+
+Test #5 OK 
+Sides must be positive!
+
+Test #6 OK 
+Sides must be positive!
+
+Test #7 OK 
+Parameters do not match type Short: For input string: "2.5"
+
+Test #8 OK 
+Parameters do not match type Short: For input string: "2.5"
+
+Test #9 OK 
+Parameters do not match type Short: For input string: "2.5"
+
+Test #10 OK 
+Sides must satisfy triangle inequality
+
+Test #11 OK 
+Sides must satisfy triangle inequality
+
+Test #12 OK 
+Sides must satisfy triangle inequality
+
+Test #13 OK 
+Parameters do not match type Short: For input string: "aa"
+
+Test #14 OK 
+Parameters do not match type Short: For input string: "aa"
+
+Test #15 OK 
+Parameters do not match type Short: For input string: "aa"
+
+Test #16 OK 
+Parameters do not match type Short: Value out of range. Value:"32769" Radix:10
+
+Test #17 OK 
+Parameters do not match type Short: Value out of range. Value:"32769" Radix:10
+
+Test #18 OK 
+Parameters do not match type Short: Value out of range. Value:"32769" Radix:10
+
+Test #19 OK 
+Incorrect number of parameters
+
+Test #20 OK 
+Incorrect number of parameters
+
+Test #21 OK 
+Incorrect number of parameters
+
