@@ -1,0 +1,54 @@
+-------------Tests-------------
+Test #1 OK
+Description: 
+	login: ivanov; password: 1234567 
+	result: ivanov, you are welcome!
+
+Test #2 OK
+Description: 
+	Login was too long! 
+
+Test #3 OK
+Description: 
+	Password was too long! 
+
+Test #4 OK
+Description: 
+	login: login; password: password 
+	result: Try again! Attempts left: 2
+
+Test #5 OK
+Description: 
+	login: anotherlog; password: password 
+	result: Try again! Attempts left: 1
+
+Test #6 OK
+Description: 
+	login: lastlogin; password: pass 
+	result: Wrong data! It was the last attempt.
+
+Test #7 OK
+Description: 
+	Login was empty! 
+
+Test #8 OK
+Description: 
+	Password was empty! 
+
+Test #9 OK
+Description: 
+	login: tryagain; password: password 
+	result: There are no attempts for you!
+
+Test #10 OK
+Description: 
+	File was empty 
+
+Test #11 OK
+Description: 
+	File was too big 
+
+Test #12 OK
+Description: 
+	Invalid name of the file! 
+
