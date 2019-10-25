@@ -10,7 +10,7 @@ public class Account {
         if (aLogin.length() == 0)
             throw new IllegalArgumentException("Login was empty!");
         if (aPassword.length() == 0)
-            throw new IllegalArgumentException("Password was empty");
+            throw new IllegalArgumentException("Password was empty!");
         if (aLogin.length() > 10) {
             throw new IllegalArgumentException("Login was too long!");
         }
@@ -38,6 +38,6 @@ public class Account {
 
     @Override
     public String toString() {
-        return login + " " + password;
+        return "login: " + login + "; password: " + password;
     }
 }

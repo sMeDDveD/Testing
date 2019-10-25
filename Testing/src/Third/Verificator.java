@@ -44,7 +44,7 @@ public class Verificator {
             return login + ", you are welcome!";
         } else {
             return ((--numberOfLives != 0) ? ("Try again! Attempts left: "
-                    + numberOfLives) : "It was the last attempt");
+                    + numberOfLives) : "Wrong data! It was the last attempt.");
         }
     }
 }

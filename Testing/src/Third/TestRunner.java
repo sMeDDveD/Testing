@@ -39,13 +39,9 @@ public class TestRunner {
 
             while (scannerInput.hasNextLine()) {
                 String line = scannerInput.nextLine();
-                String[] strings = line.split(delimiter, 4);
-
-                String testFileName = strings[0];
-                String login = strings[1];
-                String password = strings[2];
-                String expectedAnswer = strings[3];
-
+                String[] args = line.split(delimiter, 2);
+                String testFileName = args[0].trim();
+                int requestsNumber = Integer.parseInt(args[1].trim());
                 Verificator verificator;
                 String errorMessage = "INVALID";
                 try {
@@ -54,18 +50,27 @@ public class TestRunner {
                     errorMessage = e.getMessage();
                     verificator = null;
                 }
-                Account account;
-                try {
-                    account = new Account(login, password);
-                } catch (Exception ex) {
-                    errorMessage = ex.getMessage();
-                    account = null;
-                }
 
-                checkResult(writerOutput, account, verificator,
-                        expectedAnswer, errorMessage);
-                testCount++;
-                allTestCounter++;
+                for (int i = 0; i < requestsNumber; i++) {
+                    line = scannerInput.nextLine();
+                    String[] strings = line.split(delimiter, 3);
+                    String login = strings[0].trim();
+                    String password = strings[1].trim();
+                    String expectedAnswer = strings[2].trim();
+
+                    Account account;
+                    try {
+                        account = new Account(login, password);
+                    } catch (Exception ex) {
+                        errorMessage = ex.getMessage();
+                        account = null;
+                    }
+
+                    checkResult(writerOutput, account, verificator,
+                            expectedAnswer, errorMessage);
+                    testCount++;
+                    allTestCounter++;
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
@@ -85,7 +90,7 @@ public class TestRunner {
         } else {
             String result = verificator.checkLoginPassword(account.getLogin(), account.getPassword());
             if (result.equalsIgnoreCase(expected)) {
-                goodAnswer(o, account);
+                goodAnswer(o, account, expected);
             } else {
                 badAnswer(o, expected, result);
             }
@@ -97,11 +102,10 @@ public class TestRunner {
         o.printf("Description: \n\t%s \n\n", error);
     }
 
-    private void goodAnswer(PrintWriter o, Account acc) {
+    private void goodAnswer(PrintWriter o, Account acc, String result) {
         o.printf("Test #%d OK\n", testCount);
-        //o.printf("Description: \n\t%s \n", acc);
-        //o.printf("\tkey: %d\n", key);
-        //o.printf("\tresult: %s\n\n", bs.getBsResult());
+        o.printf("Description: \n\t%s \n", acc);
+        o.printf("\tresult: %s\n\n", result);
     }
 
     private void badAnswer(PrintWriter o, String expected, String got) {
