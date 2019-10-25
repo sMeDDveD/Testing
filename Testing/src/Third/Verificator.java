@@ -2,6 +2,8 @@ package Third;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -23,11 +25,14 @@ public class Verificator {
         if (file.length() > MAX_FILE_SIZE) {
             throw new IllegalArgumentException("File was too big");
         }
-
-        Scanner scanner = new Scanner(file);
-        while(scanner.hasNextLine()) {
-            Account nowAccount = Account.fromString(scanner.nextLine());
-            passwordBase.put(nowAccount.getLogin(), nowAccount.getPassword());
+        try (FileReader fileReader = new FileReader(file);
+             Scanner scanner = new Scanner(fileReader)) {
+            while (scanner.hasNextLine()) {
+                Account nowAccount = Account.fromString(scanner.nextLine());
+                passwordBase.put(nowAccount.getLogin(), nowAccount.getPassword());
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
@@ -37,10 +42,9 @@ public class Verificator {
         }
         if (password.equals(passwordBase.get(login))) {
             return login + ", you are welcome!";
-        }
-        else {
+        } else {
             return ((--numberOfLives != 0) ? ("Try again! Attempts left: "
-                            + numberOfLives) : "It was the last attempt");
+                    + numberOfLives) : "It was the last attempt");
         }
     }
 }

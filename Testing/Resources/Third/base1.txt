@@ -1,3 +1,2 @@
-logins.txt:2
-sash deem
+sash kashkevi
 deem sash
