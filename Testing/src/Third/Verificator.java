@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Verificator {
-    public static final int MAX_FILE_SIZE = 512;
+    public static final int MAX_FILE_SIZE = 522;
 
     private Map<String, String> passwordBase = new LinkedHashMap<>();
     private short numberOfLives = 3;

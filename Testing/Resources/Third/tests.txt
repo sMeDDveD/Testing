@@ -1,4 +1,4 @@
-Testing\Resources\Third\test1.txt;9
+Resources\Third\test1.txt;9
     ivanov;1234567;ivanov, you are welcome!
     longlonglogin;1234567;Login was too long!
     userlogin;12345678900;Password was too long!
@@ -8,9 +8,9 @@ Testing\Resources\Third\test1.txt;9
     ;password;Login was empty!
     login;;Password was empty!
     tryagain;password;There are no attempts for you!
-Testing\Resources\Third\test2.txt;1
+Resources\Third\test2.txt;1
     ivanov;1234567;File was empty
-Testing\Resources\Third\test3.txt;1
+Resources\Third\test3.txt;1
     ivanov;1234567;File was too big
-Testing\Resources\Third\wrongpath.txt;1
+Resources\Third\wrongpath.txt;1
     ivanov;1234567;Invalid name of the file!

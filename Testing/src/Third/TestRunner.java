@@ -7,7 +7,7 @@ public class TestRunner {
     public static String delimiter = ";";
 
     public static String startMessage = "Tests";
-    public static String outputFile = "Testing\\Resources\\Third\\out.txt";
+    public static String outputFile = "Resources\\Third\\out.txt";
     public static boolean needToAppend;
 
     private static int allTestCounter = 0;
