@@ -24,7 +24,10 @@ public class Account {
     public static Account fromString(String acc) {
         if (acc == null)
             throw new NullPointerException("Login-password string was null!");
-        String[] result = acc.split(DELIMITER, 2);
+        String[] result = acc.split(DELIMITER);
+        if (result.length != 2) {
+            throw new IllegalArgumentException("Wrong format!");
+        }
         return new Account(result[0].trim(), result[1].trim());
     }
 
