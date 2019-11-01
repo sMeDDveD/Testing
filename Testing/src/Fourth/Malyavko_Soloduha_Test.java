@@ -1,41 +1,58 @@
 package Fourth;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.fail;
 
+@Nested
+@DisplayName("Test class")
 public class Malyavko_Soloduha_Test {
     @BeforeAll
-    static void setUp() {
-        System.out.println("Initialization...");
+    static void start() {
+        System.out.println("Testing started");
     }
 
     @AfterAll
-    static void tearDown() {
-        System.out.println("Closing...");
+    static void end() {
+        System.out.println("Testing finished");
     }
 
-    @Test
-    @Order(3)
-    public void test1() {
-        System.out.println("I am test №1!");
-    }
+    @Nested
+    @DisplayName("Test suite")
+    @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+    class GroupOfTest {
 
-    @Test
-    @Order(2)
-    public void test2() {
-        assertEquals(2, 1 + 1);
-        System.out.println("I am test №2!");
-    }
+        @BeforeEach
+        void init(TestInfo testInfo) {
+            System.out.println(testInfo.getDisplayName() + " started");
+        }
 
-    @Test
-    @Order(1)
-    public void test3() {
-        fail("Fail!");
+        @AfterEach
+        void destruct(TestInfo testInfo) {
+            System.out.println(testInfo.getDisplayName() + " ended");
+        }
+
+        @Test
+        @Order(3)
+        @DisplayName("Test №1")
+        void test1() {
+            System.out.println("Checking test №1");
+        }
+
+        @Test
+        @Order(2)
+        @DisplayName("Test №2")
+        void test2() {
+            assertTrue(true);
+        }
+
+        @Test
+        @Order(1)
+        @DisplayName("Test №3")
+        void test3() {
+            fail("Failed test!");
+        }
     }
 
 }
